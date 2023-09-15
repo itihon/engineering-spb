@@ -1,12 +1,11 @@
 * {
-    border: 1px solid royalblue;
+    outline: 1px solid royalblue;
 }
 
-*:has(.hc-image) {
-    border: 8px solid royalblue;
+*:has(:hover) {
+    outline: 1px solid royalblue !important;
 }
 
 *:hover {
-    border: 2px solid orchid;
-    pointer-events: none;
+    outline: 2px solid orchid;
 }
