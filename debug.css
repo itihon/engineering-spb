@@ -1,0 +1,12 @@
+* {
+    border: 1px solid royalblue;
+}
+
+*:has(.hc-image) {
+    border: 8px solid royalblue;
+}
+
+*:hover {
+    border: 2px solid orchid;
+    pointer-events: none;
+}
