@@ -1,14 +1,17 @@
 .header-component {
     --header-size: 150px;
-    
+    --background-size: 250px;
+  
+    position: relative;
     height: var(--header-size);
-    
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
     column-gap: 20px;
     justify-content: center;
+    z-index: 1000;
    
     background-color: #282828;
     color: white;
@@ -23,7 +26,7 @@
     
     border-radius: 30%;
     background-position: -45px 0;
-    background-size: 250px;
+    background-size: var(--background-size);
     background-image: url('images/site_header_img.jpg');
     box-shadow: inset 0px 0px 0px 10px rgba(0, 0, 0, .4); 
     
@@ -45,4 +48,17 @@
 }
 
 
+@media (max-width: 425px) {
+    .header-component {
+        --header-size: 110px;
+        --background-size: 210px;
+    }
 
+    .hc-owner-name, .hc-company-name {
+        font-size: 18px;
+    }
+
+    .hc-site-description {
+        font-size: 12px;
+    }
+}

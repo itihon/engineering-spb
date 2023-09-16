@@ -1,0 +1,17 @@
+html {
+    scroll-snap-type: y proximity;
+}
+
+/*
+body {
+    scroll-snap-type: y proximity;
+}
+*/
+
+.header-component {
+    scroll-snap-align: start;
+}
+
+.pc-page {
+    scroll-snap-align: start;
+}

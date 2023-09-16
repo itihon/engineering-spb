@@ -1,0 +1,58 @@
+.pages-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pc-page {
+    position: relative;
+    height: 100vh;
+    width: 90vw;
+    margin-top: 10px;
+    padding-top: 12vh;
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: normal;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+
+    border-radius: .5%;
+    background-color: white;
+}
+
+.pc-page-content {
+    min-height: 20vh;
+    max-width: 90%;
+    padding: 4px;
+    flex: 1 0 calc(100vw / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(5deg, #efefef, white);
+}
+
+.pc-content-header {
+    align-self: stretch;
+    margin-bottom: 10px;
+}
+
+.portfolio-img {
+    width: 100%;
+    
+    border-radius: 4px;
+}
+
+.contact-link {
+    width: 200px;
+    margin: 4px;
+    padding-bottom: 20px;
+    outline: 1px solid royalblue;
+}
+
+.contact-img {
+    margin: 4px;
+    transform: translateY(50%);
+}
