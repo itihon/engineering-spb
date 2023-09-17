@@ -65,6 +65,15 @@
         img = clonedImg;
     }
 
+    function addZoomLabel(image) {
+        let div = d.createElement('div');
+        let text = d.createTextNode('Увеличить 🔎');
+        div.classList.add('isc-image-zoom-label');
+       
+        div.appendChild(text);
+        image.parentNode.appendChild(div);
+    }
+
     function curry(argsNum, fn) {
         return function(arg1) {
             return function(arg2) {
@@ -80,5 +89,6 @@
     addCloseHandler(closeBtn);
     nodeListToDoublyLinkedList(images);
     Array.prototype.forEach.call(images, addOpenHandler);
+    Array.prototype.forEach.call(images, addZoomLabel);
 
 })(window, document, '[rel="js-portfolio-img');
