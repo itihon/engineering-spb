@@ -73,7 +73,7 @@
     transform-origin: 50%;
 }
 
-@media (max-width: 535px) {
+@media (width < 535px) {
 
     .nc-menu-item-caption {
         position: absolute;
@@ -105,7 +105,6 @@
         height: 48px;
         margin: 0 1px;
 
-        flex-wrap: wrap;
     }
 
     .nc-menu-item-icon {
@@ -114,5 +113,26 @@
 
     .nc-menu-item:hover .nc-menu-item-icon {
         box-shadow: 0 1px 0 0px royalblue;
+    }
+}
+
+@media (width < 375px) {
+    .nc-menu-item {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (width < 350px) {
+    .nc-menu-item {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (width < 320px) {
+    .nc-menu-item {
+        width: 38px;
+        height: 38px;
     }
 }
