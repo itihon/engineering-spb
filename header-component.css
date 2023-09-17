@@ -14,6 +14,7 @@
     background-color: #282828;
     color: white;
     -webkit-mask-image: -webkit-radial-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .9) 70%); 
+    mask-image: radial-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .9) 70%); 
 }
 
 .hc-img {
@@ -34,15 +35,18 @@
 
 .hc-owner-name {
     -webkit-mask-image: -webkit-radial-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .5) 80%); 
+    mask-image: radial-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .5) 80%); 
 }
 
 .hc-company-name {
     -webkit-mask-image: -webkit-radial-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .5) 70%); 
+    mask-image: radial-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .5) 70%); 
 }
 
 .hc-site-description {
     color: #b0b0b0;
     -webkit-mask-image: -webkit-radial-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .5) 70%); 
+    mask-image: radial-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .5) 70%); 
 }
 
 
