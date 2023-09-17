@@ -22,10 +22,12 @@
 
     function closeHandler(e) {
         container.classList.remove('visible');
+        d.body.style.overflow = 'auto';
     }
 
     function openHandler(e) {
         container.classList.add('visible');
+        d.body.style.overflow = 'hidden';
 
         cloneImg(this);
     }
