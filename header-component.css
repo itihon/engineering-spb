@@ -3,14 +3,12 @@
     --background-size: 250px;
   
     position: relative;
-    height: var(--header-size);
     width: 100%;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    column-gap: 20px;
+    flex-flow: row wrap;
+    align-items: center;
     justify-content: center;
+    gap: 2vw;
     z-index: 1000;
    
     background-color: #282828;
@@ -21,15 +19,17 @@
 .hc-img {
     height: var(--header-size);
     width: var(--header-size);
-
-    align-self: flex-end;
     
     border-radius: 30%;
     background-position: -45px 0;
     background-size: var(--background-size);
     background-image: url('images/site_header_img.jpg');
     box-shadow: inset 0px 0px 0px 10px rgba(0, 0, 0, .4); 
-    
+}
+
+.hc-description {
+    max-width: fit-content;
+    flex: 1 0;
 }
 
 .hc-owner-name {
@@ -41,8 +41,6 @@
 }
 
 .hc-site-description {
-    max-width: calc(100% - var(--header-size));
-    
     color: #b0b0b0;
     -webkit-mask-image: -webkit-radial-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, .5) 70%); 
 }

@@ -1,11 +1,11 @@
 .nav-component {
-    --stick-point: 6vh;
+    --stick-point: 4vh;
 
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: .2vw;
     z-index: 999;
 
     background-color: white;
@@ -24,6 +24,7 @@
     display: flex;
     align-items: center;
     color: white;
+    font-size: calc(var(--stick-point) * 80%);
     /*
     background: linear-gradient(2deg, darkgray, transparent);
     backdrop-filter: blur(5px);
@@ -35,24 +36,68 @@
 
 .nc-menu-item {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
     justify-content: center;
+    
+    max-width: fit-content;
+    flex: 1 0;
 
     cursor: pointer;
 }
 
-.nc-menu-item-caption {
-    color: black;
+.nc-menu-item:hover  .nc-menu-item-caption {
+    transform: translateY(.5em);
 }
 
-@media (max-width: 425px) {
-    .nav-component {
-        gap: 1px;
-    }
+.nc-menu-item-icon {
+    align-self: flex-start;
+    background-color: white;
+}
+
+.nc-menu-item-caption {
+    position: relative;
+    flex: 1 0 100%;
+    padding-bottom: .4vh;
+
+    text-align: center;
+    color: black;
+    background-color: white;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+
+    transition: transform .2s ease-out, opacity .1s ease-out;
+    transform-origin: 50%;
+}
+
+@media (max-width: 535px) {
 
     .nc-menu-item-caption {
-        /*font-size: 10px;*/
-        display:none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        
+        opacity: 0;
+        
+        z-index: -1;
+    }
+
+    .nc-menu-item-caption::after {
+        content: "";
+        position: absolute;
+        width: 90%;
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+    
+    .nc-menu-item:hover  .nc-menu-item-caption {
+        transform: translateY(100%);
+        opacity: 1;
     }
 
     .nc-menu-item {
@@ -65,5 +110,9 @@
 
     .nc-menu-item-icon {
         height: 100%;
+    }
+
+    .nc-menu-item:hover .nc-menu-item-icon {
+        box-shadow: 0 1px 0 0px royalblue;
     }
 }

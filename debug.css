@@ -9,3 +9,47 @@
 *:hover {
     outline: 2px solid orchid;
 }
+
+.body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: fit-content;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+}
+
+.logo {
+    background: url('/engineering-spb/images/site_header_img.jpg');
+    background-size: 250px;
+    background-position: -45px 0;
+    width: 150px;
+    height: 150px;
+}
+
+.site-description {
+    height: fit-content;
+}
+
+.nav {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.nav-item {
+    max-width: fit-content;
+    flex: 1 0;
+}
