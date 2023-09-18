@@ -90,10 +90,10 @@
         content: "";
         position: absolute;
         width: 90%;
-        height: 1px;
+        height: 2px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: rgba(255, 0, 0, 0.5);
+        background-color: rgba(255, 0, 0, 0.3);
     }
     
     .nc-menu-item:hover  .nc-menu-item-caption {
@@ -113,7 +113,7 @@
     }
 
     .nc-menu-item:hover .nc-menu-item-icon {
-        box-shadow: 0 1px 0 0px royalblue;
+        box-shadow: 0 2px 0 0px royalblue;
     }
 }
 
