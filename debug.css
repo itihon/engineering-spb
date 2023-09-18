@@ -53,3 +53,9 @@
     max-width: fit-content;
     flex: 1 0;
 }
+
+@media (max-width: 416px) {
+    body {
+        background-color: blueviolet;
+    }
+}

@@ -74,7 +74,7 @@
         image.parentNode.appendChild(div);
     }
 
-    function curry(argsNum, fn) {
+    function curry(arity, fn) {
         return function(arg1) {
             return function(arg2) {
                 return function(arg3) {
@@ -83,6 +83,19 @@
             };
         };
     } 
+
+    function curry(arity, fn) {
+        return function curried(arg) {
+                if (arity == 1) {
+                    return fn(arg);
+                }
+                else {
+                    return curry(--arity, function wrapper(...args) {
+                        return fn(...args.concat(arg))
+                    });
+                }
+        };
+    }
 
     addFlipHandler(prevBtn);
     addFlipHandler(nextBtn);

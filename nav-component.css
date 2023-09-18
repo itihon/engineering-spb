@@ -74,7 +74,7 @@
     transform-origin: 50%;
 }
 
-@media (width < 535px) {
+@media (max-width: 535px) {
 
     .nc-menu-item-caption {
         position: absolute;
@@ -117,21 +117,21 @@
     }
 }
 
-@media (width < 375px) {
+@media (max-width: 375px) {
     .nc-menu-item {
         width: 45px;
         height: 45px;
     }
 }
 
-@media (width < 350px) {
+@media (max-width: 350px) {
     .nc-menu-item {
         width: 40px;
         height: 40px;
     }
 }
 
-@media (width < 320px) {
+@media (max-width: 320px) {
     .nc-menu-item {
         width: 38px;
         height: 38px;
