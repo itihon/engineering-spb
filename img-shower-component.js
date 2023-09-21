@@ -13,11 +13,9 @@
     const PREV_NODE = 'ISC_prevNode';
     const NEXT_NODE = 'ISC_nextNode';
     
-    function nodeListToDoublyLinkedList (nodeList) {
-        for (let i = 0; i < nodeList.length; i++) {
-            nodeList[i][PREV_NODE] = nodeList[i - 1] || nodeList[nodeList.length - 1];
-            nodeList[i][NEXT_NODE] = nodeList[i + 1] || nodeList[0];
-        }
+    function linkAdjacentImages (image, i, imageList) {
+        image[PREV_NODE] = imageList[i - 1] || imageList[imageList.length - 1];
+        image[NEXT_NODE] = imageList[i + 1] || imageList[0];
     }
 
     function closeHandler(e) {
@@ -31,11 +29,7 @@
 
         cloneImg(this);
     }
-
-    function addHandler(element, type, handler) {
-        element.addEventListener(type, handler);
-    }
-
+    
     function flipHandler(e) {
         
         if (this === prevBtn) {
@@ -47,19 +41,27 @@
         }
     }
 
-    function cloneImg(imgElement) {
-        let clonedImg = imgElement.cloneNode();
-        let classList = clonedImg.classList.values();
+    function addHandler(element, type, handler) {
+        element.addEventListener(type, handler);
+    }
 
+    function cloneImg(imgElement) {
+        // cloneElement(element) : clonedElement
+        let clonedImg = imgElement.cloneNode();
+        clonedImg[PREV_NODE] = imgElement[PREV_NODE];
+        clonedImg[NEXT_NODE] = imgElement[NEXT_NODE];
+       
+        // clearClassList(element)
+        let classList = clonedImg.classList.values();
         for (className of classList) {
             clonedImg.classList.remove(className);
         }
 
+        // copyClassList(srcElement, destElement)
         clonedImg.classList.add(...img.classList.values());
 
-        clonedImg[PREV_NODE] = imgElement[PREV_NODE];
-        clonedImg[NEXT_NODE] = imgElement[NEXT_NODE];
 
+        // replaceElement(containder, elToDelete, elToPut)
         container.removeChild(img);
         container.appendChild(clonedImg); 
         img = clonedImg;
@@ -73,16 +75,6 @@
         div.appendChild(text);
         image.parentNode.appendChild(div);
     }
-
-    function curry(arity, fn) {
-        return function(arg1) {
-            return function(arg2) {
-                return function(arg3) {
-                    return fn(arg3, arg2, arg1);
-                };
-            };
-        };
-    } 
 
     function curry(arity, fn) {
         return function curried(arg) {
@@ -100,7 +92,7 @@
     addFlipHandler(prevBtn);
     addFlipHandler(nextBtn);
     addCloseHandler(closeBtn);
-    nodeListToDoublyLinkedList(images);
+    Array.prototype.forEach.call(images, linkAdjacentImages);
     Array.prototype.forEach.call(images, addOpenHandler);
     Array.prototype.forEach.call(images, addZoomLabel);
 
