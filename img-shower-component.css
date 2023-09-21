@@ -1,16 +1,17 @@
 .img-shower-component {
 
     position: fixed;
-    width: 90vw;
-    height: 90vh;
     left: 5vw;
     top: 5vh;
+    right: 5vw;
+    bottom: 5vh;
     z-index: 9999999999;
     overflow: auto;
     display: none;
     align-items: center;
     justify-content: center;
 
+    border-radius: 8px;
     background-color: #223138;
     box-shadow: 0 0 8px 4px rgba(0, 0, 0, .5);
 }
@@ -36,11 +37,13 @@
     position: fixed;
     width: 42px;
     height: 42px;
-    top: 50vh;
+    top: 50%;
     transform: translateY(-50%);
 
     text-align: center;
-    padding: 12px 0;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 14px 0;
     border-radius: 10%;
     background-color: rgba(0, 0, 0, .6);
     color: rgba(255, 255, 255, .6);
@@ -49,17 +52,17 @@
 }
 
 .isc-prev-btn {
-    left: 6vw;
+    left: calc(5vw + 5px);
 }
 
 .isc-next-btn,
 .isc-close-btn {
-    right: 6vw;
+    right: calc(5vw + 5px);
 }
 
 .isc-close-btn {
     transform: translateY(0);
-    top: 6vh;
+    top: calc(5vh + 5px);
 }
 
 .isc-prev-btn:hover,
