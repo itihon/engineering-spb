@@ -71,6 +71,8 @@
         let div = d.createElement('div');
         let text = d.createTextNode('Увеличить 🔎');
         div.classList.add('isc-image-zoom-label');
+
+        addHandler(div, 'click', openHandler.bind(image));
        
         div.appendChild(text);
         image.parentNode.appendChild(div);
