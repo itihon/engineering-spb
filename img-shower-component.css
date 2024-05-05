@@ -10,6 +10,7 @@
     display: none;
     align-items: center;
     justify-content: center;
+    pointer-events: all;
 
     border-radius: 8px;
     background-color: #223138;
@@ -76,4 +77,9 @@
 
 .visible {
     display: flex;
+}
+
+.behindModal {
+    overflow: hidden;
+    pointer-events: none;
 }

@@ -20,12 +20,12 @@
 
     function closeHandler(e) {
         container.classList.remove('visible');
-        d.body.style.overflow = 'auto';
+        document.body.classList.remove('behindModal');
     }
 
     function openHandler(e) {
         container.classList.add('visible');
-        d.body.style.overflow = 'hidden';
+        document.body.classList.add('behindModal');
 
         cloneImg(this);
     }
@@ -68,14 +68,14 @@
     }
 
     function addZoomLabel(image) {
-        let div = d.createElement('div');
+        let zoomLabel = d.createElement('div');
         let text = d.createTextNode('Увеличить 🔎');
-        div.classList.add('isc-image-zoom-label');
+        zoomLabel.classList.add('isc-image-zoom-label');
 
-        addHandler(div, 'click', openHandler.bind(image));
+        addHandler(zoomLabel, 'click', openHandler.bind(image));
        
-        div.appendChild(text);
-        image.parentNode.appendChild(div);
+        zoomLabel.appendChild(text);
+        image.parentNode.appendChild(zoomLabel);
     }
 
     function curry(arity, fn) {
