@@ -5,7 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: .2vw;
+/*     gap: .2vw; */
     z-index: 999;
 
     background-color: white;
@@ -36,6 +36,7 @@
 }
 
 .nc-menu-item {
+/*     position: relative; */
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -45,10 +46,7 @@
     flex: 1 0;
 
     cursor: pointer;
-}
-
-.nc-menu-item:hover  .nc-menu-item-caption {
-    transform: translateY(.5em);
+    
 }
 
 .nc-menu-item-icon {
@@ -64,25 +62,62 @@
     text-align: center;
     color: black;
     background-color: white;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom: 1px solid gray;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
 
-    transition: transform .2s ease-out, opacity .1s ease-out;
+    transition: transform .05s ease-out, opacity .1s ease-out;
     transform-origin: 50%;
 }
+
+/* ----------------------- */
+.rel-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.nc-menu-item .before::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    right: 100vw;
+    left: -100vw;
+    top: 200%;
+
+    background-color: royalblue;
+    transition: right .4s ease-in;
+}
+
+.nc-menu-item > * {
+    position: relative;
+    top: -100%;
+}
+
+.nc-menu-item:hover .before::before {
+    right: 0px;
+    transition: right .05s ease-out;
+}
+
+.nc-menu-item:hover .nc-menu-item-caption{
+    color: royalblue;
+}
+/* ----------------------- */
 
 @media (max-width: 535px) {
 
     .nc-menu-item-caption {
         position: absolute;
+        top: 100%;
         width: 100%;
         left: 0;
         
         opacity: 0;
         
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
         z-index: -1;
     }
 
@@ -97,10 +132,9 @@
     }
     
     .nc-menu-item:hover  .nc-menu-item-caption {
-        transform: translateY(100%);
         opacity: 1;
     }
-
+    
     .nc-menu-item {
         width: 48px;
         height: 48px;
@@ -110,10 +144,6 @@
 
     .nc-menu-item-icon {
         height: 100%;
-    }
-
-    .nc-menu-item:hover .nc-menu-item-icon {
-        box-shadow: 0 2px 0 0px royalblue;
     }
 }
 
